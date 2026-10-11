@@ -1,0 +1,174 @@
+Last login: Wed Sep 30 21:31:38 on ttys017
+(base) ruslan@Mac ~ % ls
+Apps					Miniconda
+AwsEc2Keys				Movies
+CourseraCertificates			Music
+Desktop					Obsidian
+Documents				PagesDocs
+Downloads				Pictures
+GolandProjects				Projects
+Golang					Public
+IdeaSnapshots				go
+Java					Авторские программы
+LangProBackups				Мама
+Library					Финансы
+Maps
+(base) ruslan@Mac ~ % mkdir ~/devops/absalyamov_ruslan
+mkdir: /Users/ruslan/devops: No such file or directory
+(base) ruslan@Mac ~ % mkdir -p ~/devops/absalyamov_ruslan
+(base) ruslan@Mac ~ % cd ~/devops/absalyamov_ruslan
+(base) ruslan@Mac absalyamov_ruslan % mkdir app
+(base) ruslan@Mac absalyamov_ruslan % mkdir scripts
+(base) ruslan@Mac absalyamov_ruslan % mkdir config
+(base) ruslan@Mac absalyamov_ruslan % mkdir logs  
+(base) ruslan@Mac absalyamov_ruslan % mkdir backup
+(base) ruslan@Mac absalyamov_ruslan % touch Absalyamov_Ruslan_info.txt
+(base) ruslan@Mac absalyamov_ruslan % touch config/app.conf
+(base) ruslan@Mac absalyamov_ruslan % touch logs/application.log
+(base) ruslan@Mac absalyamov_ruslan % pwd
+/Users/ruslan/devops/absalyamov_ruslan
+(base) ruslan@Mac absalyamov_ruslan % cp
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-aclpSsvXx] source_file ... target_directory
+(base) ruslan@Mac absalyamov_ruslan % cd logs/application.log
+cd: not a directory: logs/application.log
+(base) ruslan@Mac absalyamov_ruslan % echo INFO Application started
+INFO User logged in
+WARNING Configuration file missing
+INFO Database connected
+ERROR Database connection failed
+INFO Application restarted
+WARNING Memory usage is high
+INFO Request received
+ERROR Request failed
+INFO Application stopped
+> logs/application.log
+INFO Application started
+zsh: command not found: INFO
+zsh: command not found: WARNING
+zsh: command not found: INFO
+zsh: command not found: ERROR
+zsh: command not found: INFO
+zsh: command not found: WARNING
+zsh: command not found: INFO
+zsh: command not found: ERROR
+zsh: command not found: INFO
+^C
+(base) ruslan@Mac absalyamov_ruslan % echo "INFO Application started
+INFO User logged in
+WARNING Configuration file missing
+INFO Database connected
+ERROR Database connection failed
+INFO Application restarted
+WARNING Memory usage is high
+INFO Request received
+ERROR Request failed
+INFO Application stopped"
+INFO Application started
+INFO User logged in
+WARNING Configuration file missing
+INFO Database connected
+ERROR Database connection failed
+INFO Application restarted
+WARNING Memory usage is high
+INFO Request received
+ERROR Request failed
+INFO Application stopped
+(base) ruslan@Mac absalyamov_ruslan % echo "INFO Application started
+INFO User logged in
+WARNING Configuration file missing
+INFO Database connected
+ERROR Database connection failed
+INFO Application restarted
+WARNING Memory usage is high
+INFO Request received
+ERROR Request failed
+INFO Application stopped
+" > logs/application.log
+(base) ruslan@Mac absalyamov_ruslan % ls 
+Absalyamov_Ruslan_info.txt	config
+app				logs
+backup				scripts
+(base) ruslan@Mac absalyamov_ruslan % cd logs
+(base) ruslan@Mac logs % find . -name "application.log"
+./application.log
+(base) ruslan@Mac logs % grep "ERROR" application.log
+ERROR Database connection failed
+ERROR Request failed
+(base) ruslan@Mac logs % grep "WARNING" application.log
+WARNING Configuration file missing
+WARNING Memory usage is high
+(base) ruslan@Mac logs % grep -c "ERROR" application.log
+2
+(base) ruslan@Mac logs % tail -n 5 application.log
+WARNING Memory usage is high
+INFO Request received
+ERROR Request failed
+INFO Application stopped
+
+(base) ruslan@Mac logs % cd ..
+(base) ruslan@Mac absalyamov_ruslan % touch private.txt
+(base) ruslan@Mac absalyamov_ruslan % touch public.txt 
+(base) ruslan@Mac absalyamov_ruslan % ls -l private.txt public.txt
+-rw-r--r--  1 ruslan  staff  0 Oct  8 11:17 private.txt
+-rw-r--r--  1 ruslan  staff  0 Oct  8 11:17 public.txt
+(base) ruslan@Mac absalyamov_ruslan % chmod u=rw,go= private.txt
+(base) ruslan@Mac absalyamov_ruslan % chmod u=rw,go=r public.txt 
+(base) ruslan@Mac absalyamov_ruslan % ls -l private.txt public.txt
+-rw-------  1 ruslan  staff  0 Oct  8 11:17 private.txt
+-rw-r--r--  1 ruslan  staff  0 Oct  8 11:17 public.txt
+(base) ruslan@Mac absalyamov_ruslan % ls
+Absalyamov_Ruslan_info.txt	logs
+app				private.txt
+backup				public.txt
+config				scripts
+(base) ruslan@Mac absalyamov_ruslan % touch scripts/Absalyamov_Ruslan_system.sh
+(base) ruslan@Mac absalyamov_ruslan % rm scripts/Absalyamov_Ruslan_system.sh
+(base) ruslan@Mac absalyamov_ruslan % nano scripts/Absalyamov_Ruslan_system.sh
+
+  UW PICO 5.09     File: scripts/Absalyamov_Ruslan_system.sh     Modified  
+
+#!/bin/bash
+
+PRACTICE_DIR="$(dirname "$0")/../Absalyamov_Ruslan_info.txt"
+
+echo "================="  
+echo "Student Information"
+echo "================="
+echo 
+echo "Name: Ruslan"
+echo "Surname: Absalyamov"
+echo "Group: IT2-2313"  
+echo "Student ID: 37044"
+echo 
+echo "=================" 
+echo "System information"
+echo "================="
+echo 
+echo "Username: $(whoami)"  
+echo "Hostname: $(hostname)"
+echo "Current date: $(date)"
+echo "Operating system: $(uname -s -r)"
+echo "Disk usage:"
+df -h /
+echo "Memory usage:"
+free -h
+echo
+
+if [ -f "$PRACTICE_DIR" ]; then
+        echo "Student information file exists."
+else
+        echo "Student information file does not exist."
+fi
+
+
+
+
+
+
+
+
+
+
+^G Get Help ^O WriteOut ^R Read File^Y Prev Pg  ^K Cut Text ^C Cur Pos  
+^X Exit     ^J Justify  ^W Where is ^V Next Pg  ^U UnCut Tex^T To Spell 
